@@ -1,0 +1,119 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class MyLinkedList {
+private:
+    struct Node {
+        int val;
+        Node *next;
+        Node(int x) {
+            val = x;
+            next = NULL;
+        }
+    };
+
+    Node *head;
+    int size;
+
+public:
+    MyLinkedList() {
+        head = NULL;
+        size = 0;
+    }
+
+    int get(int index) {
+        if(index < 0 || index >= size) return -1;
+
+        Node *q = head;
+        for(int i = 0; i < index; i++) q = q->next;
+
+        return q->val;
+    }
+
+    void addAtHead(int val) {
+        Node *temp = new Node(val);
+        temp->next = head;
+        head = temp;
+        size++;
+    }
+
+    void addAtTail(int val) {
+        Node *temp = new Node(val);
+
+        if(head == NULL) {
+            head = temp;
+            size++;
+            return;
+        }
+
+        Node *q = head;
+        while(q->next != NULL) q = q->next;
+
+        q->next = temp;
+        size++;
+    }
+
+    void addAtIndex(int index, int val) {
+        if(index < 0 || index > size) return;
+
+        if(index == 0) {
+            addAtHead(val);
+            return;
+        }
+
+        Node *q = head;
+        for(int i = 0; i < index - 1; i++) {
+            q = q->next;
+        }
+
+        Node *temp = new Node(val);
+        temp->next = q->next;
+        q->next = temp;
+        size++;
+    }
+
+    void deleteAtIndex(int index) {
+        if(index < 0 || index >= size) return;
+
+        if(index == 0) {
+            Node *temp = head;
+            head = head->next;
+            delete temp;
+            size--;
+            return;
+        }
+
+        Node *q = head;
+        for(int i = 0; i < index - 1; i++) {
+            q = q->next;
+        }
+
+        Node *temp = q->next;
+        q->next = temp->next;
+        delete temp;
+        size--;
+    }
+};
+
+int main() {
+    MyLinkedList obj;
+
+    obj.addAtHead(10);      // [10]
+    obj.addAtTail(20);      // [10, 20]
+    obj.addAtTail(30);      // [10, 20, 30]
+
+    obj.addAtIndex(1, 15);  // [10, 15, 20, 30]
+
+    cout << obj.get(0) << endl; // 10
+    cout << obj.get(1) << endl; // 15
+    cout << obj.get(2) << endl; // 20
+    cout << obj.get(3) << endl; // 30
+
+    obj.deleteAtIndex(2);   // remove 20 → [10, 15, 30]
+    cout << obj.get(2) << endl; // 30
+
+    obj.deleteAtIndex(0);   // remove 10 → [15, 30]
+    cout << obj.get(0) << endl; // 15
+
+    return 0;
+}
