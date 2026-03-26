@@ -2,18 +2,19 @@
 
 ## 📌 About
 
-This repository contains my **Data Structures & Algorithms practice solutions in C++**.
+This repository contains my **Data Structures & Algorithms (DSA)** practice solutions in **C++**.
 It includes implementations of core data structures and optimized approaches for coding interview problems.
 
 ---
 
 ## 📚 Problem Categories
 
-* Arrays
-* Linked List
-* Binary Search
-* Strings
-* Queue
+* 📦 Arrays
+* 🔗 Linked List
+* 🔍 Binary Search
+* 🔤 Strings
+* 🔄 Queue
+* 🔁 Recursion
 
 ---
 
@@ -37,6 +38,14 @@ It includes implementations of core data structures and optimized approaches for
 
 ---
 
+### 🔁 Recursion
+
+| Problem                  | Approach                      | Time | Space |
+| ------------------------ | ----------------------------- | ---- | ----- |
+| String to Integer (atoi) | Recursion + Overflow Handling | O(n) | O(n)  |
+
+---
+
 ## ⚙️ How to Run
 
 ```bash
@@ -48,9 +57,10 @@ g++ filename.cpp
 
 ## 💡 Notes
 
-* Array-based circular queue is **optimal (O(1) operations)**
-* Linked list implementation is useful for **concept understanding**
-* Future improvements: Implement **O(1) linked list version using tail pointer**
+* ✅ Array-based circular queue is optimal (**O(1)** operations)
+* 📘 Linked list implementation helps in understanding pointer manipulation
+* 🔁 Recursion problems improve problem-solving and thinking skills
+* 🚀 Future improvement: Implement **O(1) linked list queue using tail pointer**
 
 ---
 
@@ -63,11 +73,22 @@ DSA-Using-CPP/
  ├── BinarySearch/
  ├── Strings/
  ├── Queue/
-      ├── Circular_Q/
+ │    ├── Circular_Q/
+ ├── Recursion/
 ```
+
+---
+
+## 📈 Progress Tracker
+
+* Arrays: 0+
+* Linked List: 2
+* Queue: 2
+* Recursion: 1
+* 🔥 Total Solved: 5+
 
 ---
 
 ## 🔥 Author
 
-Surya
+**Surya Lakkimsetti**
